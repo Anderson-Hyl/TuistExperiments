@@ -25,7 +25,7 @@ extension Project {
           deploymentTargets: .platforms,
           sources: ["Sources/**"],
           dependencies: (tca
-            ? [.project(target: "Indigo", path: .relativeToRoot("Indigo"))] : [])
+            ? [.project(target: "Infrastructure", path: .relativeToRoot("Infrastructure"))] : [])
             + dependencies
         ),
         .target(

@@ -2,7 +2,7 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.framework(
-  name: "Indigo",
+  name: "Infrastructure",
   dependencies: [
     .external(name: "Algorithms"),
     .external(name: "ComposableArchitecture"),

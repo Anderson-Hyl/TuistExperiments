@@ -2,7 +2,7 @@ import ComposableArchitecture
 import SwiftUI
 
 @Reducer
-public struct FeatureB {
+public struct TodosReducer {
   @ObservableState
   public struct State: Equatable {
     public var todos: [Todo] = []
@@ -64,10 +64,10 @@ public struct Todo: Equatable, Identifiable {
 
 // MARK: - SwiftUI View
 
-public struct FeatureBView: View {
-  @Bindable public var store: StoreOf<FeatureB>
+public struct TodosView: View {
+  @Bindable public var store: StoreOf<TodosReducer>
 
-  public init(store: StoreOf<FeatureB>) {
+  public init(store: StoreOf<TodosReducer>) {
     self.store = store
   }
 
@@ -124,14 +124,14 @@ public struct FeatureBView: View {
 // MARK: - Preview
 
 #Preview {
-  FeatureBView(
+  TodosView(
     store: Store(
-      initialState: FeatureB.State(todos: [
+      initialState: TodosReducer.State(todos: [
         Todo(text: "Sample todo item"),
         Todo(text: "Another todo"),
       ])
     ) {
-      FeatureB()
+      TodosReducer()
     }
   )
 }
